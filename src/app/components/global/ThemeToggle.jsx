@@ -8,7 +8,7 @@ const ThemeToggle = () => {
   const { mode, toggleTheme } = useThemeMode();
   return (
     <IconButton
-      sx={{ position: "absolute", bottom: 10, right: 10 }}
+      sx={{ position: "absolute", top: 10, right: 10 }}
       onClick={toggleTheme}
       color="inherit"
     >

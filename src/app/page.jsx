@@ -8,7 +8,7 @@ const Page = () => {
       minHeight={"100vh"}
       spacing={2}
     >
-      <Typography variant="h1">Home Page</Typography>
+      <Typography variant="h1">Home</Typography>
     </Stack>
   );
 };

@@ -9,3 +9,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Hide the Next.js "N" fast refresh indicator */
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
