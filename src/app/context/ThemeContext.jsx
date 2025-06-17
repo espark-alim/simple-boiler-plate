@@ -1,4 +1,3 @@
-// app/context/ThemeContext.js
 "use client";
 import React, {
   createContext,
@@ -15,23 +14,22 @@ const ThemeContext = createContext();
 export const useThemeMode = () => useContext(ThemeContext);
 
 const ThemeContextProvider = ({ children }) => {
-  const [mode, setMode] = useState(null); // null until localStorage is read
+  const [mode, setMode] = useState(null);
 
-  // Load theme mode from localStorage on first load
   useEffect(() => {
-    const savedMode = localStorage.getItem("themeMode") || "light";
+    const savedMode = localStorage?.getItem("themeMode") || "light";
     setMode(savedMode);
   }, []);
 
   const toggleTheme = () => {
     const newMode = mode === "light" ? "dark" : "light";
-    localStorage.setItem("themeMode", newMode);
+    localStorage?.setItem("themeMode", newMode);
     setMode(newMode);
   };
 
   const theme = useMemo(() => getTheme(mode || "light"), [mode]);
 
-  if (!mode) return null; // Wait until mode is known
+  if (!mode) return null;
 
   return (
     <ThemeContext.Provider value={{ mode, toggleTheme }}>
